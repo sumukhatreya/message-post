@@ -1,0 +1,80 @@
+<div class="content">
+  <h1>Create account</h1>
+  <form ng-submit="" name="registrationForm" novalidate>
+    <input
+      type="text"
+      name="firstName"
+      placeholder="First name"
+      ng-required="true"
+      ng-model="user.firstName"
+    />
+    <div
+      ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$invalid"
+    >
+      <small style="color: red; display: block; text-align: center"
+        >Enter a valid name</small
+      >
+    </div>
+    <input
+      type="text"
+      name="lastName"
+      placeholder="Last name"
+      ng-required="true"
+      ng-model="user.lastName"
+    />
+    <div
+      ng-show="registrationForm.lastName.$touched && registrationForm.lastName.$invalid"
+    >
+      <small style="color: red; display: block; text-align: center"
+        >Enter a valid name</small
+      >
+    </div>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      ng-required="true"
+      ng-model="user.email"
+    />
+    <div
+      ng-show="registrationForm.email.$touched && registrationForm.email.$invalid"
+    >
+      <small style="color: red; display: block; text-align: center"
+        >Enter a valid email</small
+      >
+    </div>
+    <input
+      type="text"
+      name="username"
+      placeholder="Username"
+      ng-required="true"
+      ng-model="user.username"
+    />
+    <div
+      ng-show="registrationForm.username.$touched && registrationForm.username.$invalid"
+    >
+      <small style="color: red; display: block; text-align: center"
+        >Enter a valid username</small
+      >
+    </div>
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      ng-required="true"
+      ng-model="user.password"
+    />
+    <div
+      ng-show="registrationForm.password.$touched && registrationForm.password.$invalid"
+    >
+      <small style="color: red; display: block; text-align: center"
+        >Enter a valid password</small
+      >
+    </div>
+    <input
+      type="submit"
+      value="Create account"
+      ng-disabled="registrationForm.$invalid"
+    />
+  </form>
+</div>
