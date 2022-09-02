@@ -1,8 +1,9 @@
 import { Router } from "express";
 import login from "./login";
 import register from "./register";
+import posts from "./posts";
 
-const router = new Router();
+const router = Router();
 
 /**
  * @apiDefine master Master access only
@@ -29,5 +30,6 @@ const router = new Router();
  */
 router.use("/login", login);
 router.use("/register", register);
+router.use("/posts", posts);
 
 export default router;

@@ -26,19 +26,11 @@ export const verifyJWT = (token) => {
     const res = jwt.verify(token, jwtSecret);
     console.log("Verified payload", res);
     console.log("Payload", res.username, "Payload type", typeof res.username);
-    return true;
-    // if (token) {
-    //   const res = jwt.verify(token, jwtSecret); // unsure if this line of code will work as intended - I hope this throws an error that will be caught in the catch block if the jwt is invalid (the documentation says it does, but not sure how to test this).
-    //   console.log("Verified payload", res);
-    //   console.log("Payload", res.username, "Payload type", typeof res.username);
-    //   // return res.username;
-    //   return true;
-    // } else {
-    //   // throw new Error("Token not found");
-    //   return false;
-    // }
+    return { username: res.username, valid: true };
+    // return true;
   } catch (err) {
     console.log(err);
-    return false;
+    return { valid: false };
+    // return false;
   }
 };
