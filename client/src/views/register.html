@@ -1,6 +1,6 @@
 <div class="content">
   <h1>Create account</h1>
-  <form ng-submit="" name="registrationForm" novalidate>
+  <form ng-submit="submitRegistrationForm()" name="registrationForm" novalidate>
     <input
       type="text"
       name="firstName"
@@ -77,4 +77,5 @@
       ng-disabled="registrationForm.$invalid"
     />
   </form>
+  <p>{{errMsg}}</p>
 </div>
