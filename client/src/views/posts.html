@@ -1,0 +1,32 @@
+<div>
+  <header ng-include="'views/header.html'"></header>
+  <div class="content">
+    <div>
+      <h2 style="text-align: center">Post a message</h2>
+      <form ng-submit="submitPostForm()" name="postForm" novalidate>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          ng-required="true"
+          ng-model="post.title"
+        />
+        <input
+          type="text"
+          name="message"
+          placeholder="Message"
+          ng-required="true"
+          ng-model="post.message"
+        />
+        <input type="submit" value="Submit" ng-disabled="postForm.$invalid" />
+      </form>
+    </div>
+    <ul>
+      <li ng-repeat="p in posts">
+        <h2>Title: {{p.title}}</h2>
+        <h3>Author: {{p.username}}</h3>
+        <p>{{p.message}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

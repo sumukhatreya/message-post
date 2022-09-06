@@ -1,5 +1,5 @@
 <div class="content" ng-show="isUserLoggedIn">
-  <h1>Login</h1>
+  <h2 style="text-align: center">Login</h2>
   <form ng-submit="submitLoginForm()" name="loginForm" novalidate>
     <input
       type="text"
@@ -25,6 +25,6 @@
         >Enter a valid password</small
       >
     </div>
-    <input type="submit" value="Login" />
+    <input type="submit" value="Login" ng-disabled="loginForm.$invalid" />
   </form>
 </div>
