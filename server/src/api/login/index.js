@@ -7,6 +7,7 @@ import { checkIfUserLoggedIn } from "../../services/middlewares/checkUserAuth";
 const router = Router();
 
 router.get("/", [checkIfUserLoggedIn], async (req, res, next) => {
+  // res.render("/login");
   res.status(200).json({
     message: "User logged in",
   });

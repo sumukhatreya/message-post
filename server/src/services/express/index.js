@@ -4,6 +4,7 @@ import cors from "cors";
 import compression from "compression";
 import morgan from "morgan";
 import bodyParser from "body-parser";
+import path from "path";
 // import { errorHandler as queryErrorHandler } from "querymen";
 // import { errorHandler as bodyErrorHandler } from "bodymen";
 import { env } from "../../config";
@@ -25,7 +26,7 @@ export default (apiRoot, routes) => {
   if (env === "production" || env === "development") {
     app.use(
       cors({
-        origin: "http://127.0.0.1:5500",
+        origin: "http://localhost:8000",
         credentials: true,
       })
     );
@@ -37,6 +38,7 @@ export default (apiRoot, routes) => {
   // app.use(bodyParser.json());
   app.use(express.json());
   app.use(apiRoot, routes);
+  // app.set("views", path.join(__dirname, "../../../../client/src"));
   app.use(notFound);
   app.use(errorHandler);
   // app.use(queryErrorHandler());

@@ -23,10 +23,13 @@ export const verifyJWT = (token) => {
   try {
     // const token = req.header.jwt;
     console.log("jwt token", token);
-    const res = jwt.verify(token, jwtSecret);
-    console.log("Verified payload", res);
-    console.log("Payload", res.username, "Payload type", typeof res.username);
-    return { username: res.username, valid: true };
+    if (token) {
+      console.log("Why is this piece of code executing?", token);
+      const res = jwt.verify(token, jwtSecret);
+      console.log("Verified payload", res);
+      console.log("Payload", res.username, "Payload type", typeof res.username);
+      return { username: res.username, valid: true };
+    }
     // return true;
   } catch (err) {
     console.log(err);

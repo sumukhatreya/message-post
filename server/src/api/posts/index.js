@@ -30,6 +30,7 @@ router.post("/", [checkIfUserLoggedIn], async (req, res, next) => {
       userRef: user._id,
     });
     const postEntry = await post.save();
+    // const allPosts = await Post.find();
     // console.log("Post", postEntry);
     res.status(201).json(postEntry);
   } catch (err) {
